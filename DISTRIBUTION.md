@@ -39,10 +39,10 @@ Fork → add entry in the right section → PR. One PR per list, link `https://g
 
 | List | URL | Status | Date | Notes |
 |---|---|---|---|---|
-| VoltAgent/awesome-agent-skills | https://github.com/VoltAgent/awesome-agent-skills | todo | | Largest community list (1000+ skills) |
-| heilcheng/awesome-agent-skills | https://github.com/heilcheng/awesome-agent-skills | todo | | Focus on skills used by real engineering teams |
-| ComposioHQ/awesome-claude-skills | https://github.com/ComposioHQ/awesome-claude-skills | todo | | |
-| travisvn/awesome-claude-skills | https://github.com/travisvn/awesome-claude-skills | todo | | |
+| VoltAgent/awesome-agent-skills | https://github.com/VoltAgent/awesome-agent-skills | todo | | **Deferred**: their CONTRIBUTING requires real community usage — "brand new skills are not accepted". Re-try once installs/stars accrue (≥1–2 months) |
+| heilcheng/awesome-agent-skills | https://github.com/heilcheng/awesome-agent-skills | submitted | 2026-06-10 | PR [#276](https://github.com/heilcheng/awesome-agent-skills/pull/276): "Skills by Openapi" block under Business, Productivity & Marketing, with team-affiliation disclosure |
+| ComposioHQ/awesome-claude-skills | https://github.com/ComposioHQ/awesome-claude-skills | n/a | 2026-06-10 | Hosts skills *inside* its own repo (folders, not links) — not a fit for linking an external collection |
+| travisvn/awesome-claude-skills | https://github.com/travisvn/awesome-claude-skills | todo | | **At-risk**: strict "no SaaS wrappers / no promotion" policy for skills requiring the submitter's paid platform. If submitted, be transparent and target the "Collections & Libraries" section |
 | hesreallyhim/awesome-claude-code | https://github.com/hesreallyhim/awesome-claude-code | todo | | General Claude Code list — skills section |
 | ComposioHQ/awesome-claude-plugins | https://github.com/ComposioHQ/awesome-claude-plugins | todo | | If/when packaged as plugin |
 | Chat2AnyLLM/awesome-claude-plugins | https://github.com/Chat2AnyLLM/awesome-claude-plugins | todo | | If/when packaged as plugin |
@@ -113,3 +113,6 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 | 2026-06-10 | Repo metadata set: description, homepage, 7 topics (`gh repo edit`) |
 | 2026-06-10 | Release v0.1.0 published with install instructions |
 | 2026-06-10 | Verified `npx skills add openapi/openapi-skills`: 11 skills detected and installed correctly; first install registered with skills.sh telemetry (repo not yet in their search — re-check in a few days) |
+| 2026-06-10 | Reviewed contribution policies of the 4 main awesome lists: VoltAgent deferred (maturity requirement), ComposioHQ n/a (in-repo skills), travisvn at-risk (no-promotion policy) |
+| 2026-06-10 | PR [#276](https://github.com/heilcheng/awesome-agent-skills/pull/276) opened on heilcheng/awesome-agent-skills ("Skills by Openapi", 11 entries, affiliation disclosed) |
+| 2026-06-10 | Repo polish: branded README header, Skills CI workflow (lint + zip bundles + release assets) |

@@ -1,0 +1,67 @@
+name: Skills CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate skills
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint SKILL.md files
+        run: bash test/validate_skills.sh
+
+  build:
+    name: Build skill bundles
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package each skill and the full bundle
+        run: |
+          mkdir -p dist
+          for skill in skills/*/; do
+            name="$(basename "$skill")"
+            (cd skills && zip -qr "../dist/${name}.zip" "$name")
+          done
+          zip -qr dist/openapi-skills-all.zip skills
+          ls -la dist/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-skills
+          path: dist/
+          retention-days: 30
+
+  release-assets:
+    name: Attach bundles to release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package skills
+        run: |
+          mkdir -p dist
+          for skill in skills/*/; do
+            name="$(basename "$skill")"
+            (cd skills && zip -qr "../dist/${name}.zip" "$name")
+          done
+          zip -qr dist/openapi-skills-all.zip skills
+
+      - name: Upload to release
+        run: gh release upload "$GITHUB_REF_NAME" dist/*.zip --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}

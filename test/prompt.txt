@@ -1,0 +1,14 @@
+All we know about a supplier is its Italian VAT number: 12485671007.
+
+Using the Openapi (openapi.com) platform APIs, find out:
+1. the company name and whether it is still active
+2. the address of its registered office
+3. the province and region its ZIP code belongs to
+
+Account credentials are available in the environment variables OPENAPI_EMAIL and OPENAPI_KEY. Work only from the command line (curl/jq). Be frugal: paid requests cost wallet credit, so make the minimum number of API calls needed.
+
+End your answer with a block:
+SOLUTION:
+  company: <name> (<status>)
+  office: <address>
+  territory: <province>, <region>

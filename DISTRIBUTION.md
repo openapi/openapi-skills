@@ -30,7 +30,8 @@ The highest-value targets: users install directly from here.
 
 | Channel | URL | How to get listed | Status | Date | Notes |
 |---|---|---|---|---|---|
-| Claude Code official plugin marketplace | https://github.com/anthropics/claude-plugins-official | Package the repo as a plugin (`.claude-plugin/plugin.json` + `skills/`) and use the plugin directory submission form (see https://code.claude.com/docs/en/plugins) | todo | 2026-06-10 | **Packaging done**: `.claude-plugin/plugin.json` + `marketplace.json`, `claude plugin validate` passes. Repo now works with `/plugin marketplace add openapi/openapi-skills`. Next: submission form |
+| Claude Code **community** marketplace | https://github.com/anthropics/claude-plugins-community | **Manual in-app form (login required)**: https://claude.ai/settings/plugins/submit or https://platform.claude.com/plugins/submit — review + automated safety screening; approved plugins pinned by commit SHA, catalog syncs nightly | todo | 2026-06-10 | **Packaging done & validated** (`claude plugin validate` ✓); repo already works with `/plugin marketplace add openapi/openapi-skills`. The form needs a human with a Claude account |
+| Claude Code official plugin marketplace | https://github.com/anthropics/claude-plugins-official | Curated by Anthropic at its discretion — **no application process** (the submission form feeds the community marketplace only) | n/a | 2026-06-10 | Best path: get traction in the community marketplace first |
 | anthropics/skills (official examples repo) | https://github.com/anthropics/skills | PR if/where third-party skills are accepted | todo | | Check current contribution policy first |
 
 ## 3. Awesome lists (GitHub PRs)
@@ -51,7 +52,7 @@ Fork → add entry in the right section → PR. One PR per list, link `https://g
 
 | Channel | URL | How to get listed | Status | Date | Notes |
 |---|---|---|---|---|---|
-| claudemarketplaces.com | https://claudemarketplaces.com/ | Auto-indexes GitHub marketplaces/plugins; verify presence, submit if missing | todo | | |
+| claudemarketplaces.com | https://claudemarketplaces.com/ | Auto-indexes GitHub marketplaces/plugins; no public submission mechanism found — contact maintainer [@mertduzgun](https://x.com/mertduzgun) if not picked up | todo | 2026-06-10 | Searched: not indexed yet; our `.claude-plugin/marketplace.json` (added today) is what their crawler looks for — re-check in ~1 week |
 | aitmpl.com (Claude Code Templates) | https://www.aitmpl.com/plugins/ | Contribution via their GitHub repo | todo | | |
 
 ## 5. GitHub discoverability
@@ -119,3 +120,7 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 | 2026-06-10 | Plugin packaging: `.claude-plugin/plugin.json` + `marketplace.json` added and validated (`claude plugin validate`) — repo installable via `/plugin marketplace add openapi/openapi-skills`; prerequisite for the official Anthropic marketplace done |
 | 2026-06-10 | Probed submission paths: awesomeskills.dev (manual form, instant listing) and skillsdirectory.com (manual form, reviewed) — both client-side forms, flagged for 2-minute human submission; claudeskills.info blocks automated access (403) |
 | 2026-06-10 | Topics extended to 18 (added skill-md, api-marketplace, kyc, company-data, e-invoicing, digital-signature, geocoding, italy) |
+| 2026-06-10 | Topics rebalanced with Francesco to final 18 (removed http-client/italy/kyc, added claude, llm, developer-tools) |
+| 2026-06-10 | Round 3 checks: PR #276 still open (only Vercel deploy bot comment); skills.sh still not indexing the repo (page 404) — added the official skills.sh badge to the README, which may trigger their crawler |
+| 2026-06-10 | Clarified Anthropic marketplace path: official is invite-only/curated (no application); submissions go to the **community marketplace** via in-app form (claude.ai/settings/plugins/submit, login required — human step). `claude plugin validate` passes, ready to submit |
+| 2026-06-10 | README badges: license badge switched to static shields.io image (no GitHub-API computation), skills.sh badge added |

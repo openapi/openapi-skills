@@ -8,8 +8,9 @@
 
 [![Skills CI](https://github.com/openapi/openapi-skills/actions/workflows/skills.yml/badge.svg)](https://github.com/openapi/openapi-skills/actions/workflows/skills.yml)
 [![Release](https://img.shields.io/github/v/release/openapi/openapi-skills)](https://github.com/openapi/openapi-skills/releases)
-[![License](https://img.shields.io/github/license/openapi/openapi-skills)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-11-blueviolet)](skills/)
+[![skills.sh](https://skills.sh/b/openapi/openapi-skills)](https://skills.sh/openapi/openapi-skills)
 <br>
 [![Linux Foundation Member](https://img.shields.io/badge/Linux%20Foundation-Silver%20Member-003778?logo=linux-foundation&logoColor=white)](https://www.linuxfoundation.org/about/members)
 </div>

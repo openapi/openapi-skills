@@ -18,7 +18,7 @@ The highest-value targets: users install directly from here.
 
 | Channel | URL | How to get listed | Status | Date | Notes |
 |---|---|---|---|---|---|
-| Skills.sh (Vercel) | https://www.skills.sh/ | Indexed from public GitHub repos with `skills/*/SKILL.md`; installs counted via `npx skills add openapi/openapi-skills`. Verify the repo appears in search | todo | | Leaderboard ranks by real installs — drive installs from our own docs/blog |
+| Skills.sh (Vercel) | https://www.skills.sh/ | Indexed from public GitHub repos with `skills/*/SKILL.md`; installs counted via `npx skills add openapi/openapi-skills`. Verify the repo appears in search | submitted | 2026-06-10 | Install command verified working (11 skills detected, installs to 19+ agents); first install registered. Re-check search indexing in a few days |
 | SkillX | https://github.com/nextlevelbuilder/skillx | Marketplace with semantic search/ratings; submit per their CLI/registry flow | todo | | |
 | Skills Directory | https://www.skillsdirectory.com/ | Submission with security scan (malware/prompt injection review) | todo | | Security-vetted listing is good trust signal for a B2B brand |
 | MCP Market — Skills section | https://mcpmarket.com/tools/skills | Submit skill/tool via their form | todo | | Same site can also list the Openapi MCP server |
@@ -60,10 +60,10 @@ Free, do first — improves indexing by every crawler-based directory above.
 
 | Action | Status | Date | Notes |
 |---|---|---|---|
-| Add repo topics: `agent-skills`, `claude-skills`, `claude-code`, `skill-md`, `openapi`, `api` | todo | | Settings → Topics |
-| Set repo description + website (https://openapi.com) | todo | | |
-| Tag a release (`v0.1.0`) | todo | | Registries often index releases |
-| Pin the repo on the `openapi` org profile | todo | | |
+| Add repo topics: `agent-skills`, `claude-skills`, `claude-code`, `skills`, `openapi`, `api`, `ai-agents` | listed | 2026-06-10 | Done via `gh repo edit` |
+| Set repo description + website (https://openapi.com) | listed | 2026-06-10 | Done via `gh repo edit` |
+| Tag a release (`v0.1.0`) | listed | 2026-06-10 | https://github.com/openapi/openapi-skills/releases/tag/v0.1.0 |
+| Pin the repo on the `openapi` org profile | todo | | Needs org admin via web UI |
 
 ## 6. Adjacent: MCP registries (for openapi/mcp-server)
 
@@ -105,3 +105,11 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 - When a submission is made, update its row: status, date, and the PR/listing URL in Notes.
 - Re-check `listed` channels quarterly — directories prune dead or stale entries.
 - New registries appear frequently in this ecosystem: when one is found, add a row here before submitting.
+
+## Activity log
+
+| Date | Action |
+|---|---|
+| 2026-06-10 | Repo metadata set: description, homepage, 7 topics (`gh repo edit`) |
+| 2026-06-10 | Release v0.1.0 published with install instructions |
+| 2026-06-10 | Verified `npx skills add openapi/openapi-skills`: 11 skills detected and installed correctly; first install registered with skills.sh telemetry (repo not yet in their search — re-check in a few days) |

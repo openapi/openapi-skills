@@ -46,7 +46,7 @@ Fork → add entry in the right section → PR. One PR per list, link `https://g
 | travisvn/awesome-claude-skills | https://github.com/travisvn/awesome-claude-skills | todo | | **At-risk**: strict "no SaaS wrappers / no promotion" policy for skills requiring the submitter's paid platform. If submitted, be transparent and target the "Collections & Libraries" section |
 | hesreallyhim/awesome-claude-code | https://github.com/hesreallyhim/awesome-claude-code | todo | | General Claude Code list — skills section |
 | ComposioHQ/awesome-claude-plugins | https://github.com/ComposioHQ/awesome-claude-plugins | todo | | If/when packaged as plugin |
-| Chat2AnyLLM/awesome-claude-plugins | https://github.com/Chat2AnyLLM/awesome-claude-plugins | todo | | If/when packaged as plugin |
+| Chat2AnyLLM/awesome-claude-plugins | https://github.com/Chat2AnyLLM/awesome-claude-plugins | submitted | 2026-06-10 | PR [Chat2AnyLLM/awesome-repo-configs#51](https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/51): added to both `skill_repos.json` and `plugin_repos.json` (their README auto-generates from these configs); their 3 validation tests pass |
 
 ## 4. Plugin marketplaces & directories
 
@@ -128,3 +128,4 @@ Ready-to-publish drafts live in [`.github/distribution/announcements/`](.github/
 | 2026-06-10 | Clarified Anthropic marketplace path: official is invite-only/curated (no application); submissions go to the **community marketplace** via in-app form (claude.ai/settings/plugins/submit, login required — human step). `claude plugin validate` passes, ready to submit |
 | 2026-06-10 | README badges: license badge switched to static shields.io image (no GitHub-API computation), skills.sh badge added |
 | 2026-06-10 | Round 4 (heterogeneous): release badge made static too (bump manually on new releases); SkillX investigated (npm CLI is a script runner, no registry submit — deprioritized); aitmpl contribution path identified (in-repo component PR with attribution, heavier — future option); LLMBase 403 / MCP Market 429 to automation — manual forms; 4 announcement drafts written in `.github/distribution/announcements/` (dev.to, Reddit, Show HN, LinkedIn IT+EN) ready for human posting |
+| 2026-06-10 | Round 5: PR [#51](https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/51) to Chat2AnyLLM's config repo (feeds their auto-generated plugin/skill index) — added to both skill_repos.json and plugin_repos.json with their schema, validation tests green. Re-checks: PR #276 still open, skills.sh page still 404 |

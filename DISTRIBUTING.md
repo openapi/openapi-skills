@@ -12,6 +12,21 @@ npx skills add openapi/openapi-skills
 
 ---
 
+## ⚡ Pending manual actions (human required)
+
+These cannot be automated (login, CAPTCHA, personal accounts). Ordered by value; tick and date them when done.
+
+- [ ] **Anthropic community marketplace** — submit the plugin at https://claude.ai/settings/plugins/submit (or https://platform.claude.com/plugins/submit). Requires a Claude account; packaging is already validated (`claude plugin validate` ✓). ~5 min — *the highest-value listing*
+- [ ] **awesomeskills.dev** — paste `https://github.com/openapi/openapi-skills` into https://www.awesomeskills.dev/en/submit. Instant listing, no moderation. ~30 s
+- [ ] **skillsdirectory.com** — submit at https://www.skillsdirectory.com/submit (reviewed, includes security scan — good trust signal). ~2 min
+- [ ] **Publish the announcements** from [`.github/distribution/announcements/`](.github/distribution/announcements/): dev.to/Openapi blog first, then Show HN and Reddit (not on the same day), LinkedIn anytime. ~15 min total — *this is what drives the installs that skills.sh ranks by*
+- [ ] **Pin the repo** on the `openapi` org profile (github.com/openapi → Customize pins, needs org admin). ~30 s
+- [ ] **MCP Market** (https://mcpmarket.com) and **LLMBase** (https://llmbase.ai/skills/) — both block automated access (429/403); submit manually if deemed relevant. ~5 min
+- [ ] **awesome-claude-code recommendation** — fill the [web issue form](https://github.com/hesreallyhim/awesome-claude-code/issues/new?template=recommend-resource.yml) (human-only by their policy, CLI submissions banned). Tips: recommend a focused subset (e.g. `openapi-company` + the A/B harness as evidence), disclose affiliation, state clearly that skills call openapi.com network endpoints. ~10 min
+- [ ] *(Optional)* Ping the maintainer of [heilcheng/awesome-agent-skills#276](https://github.com/heilcheng/awesome-agent-skills/pull/276) if the review stalls
+
+---
+
 ## 1. Skill registries & install ecosystems
 
 The highest-value targets: users install directly from here.
@@ -44,7 +59,7 @@ Fork → add entry in the right section → PR. One PR per list, link `https://g
 | heilcheng/awesome-agent-skills | https://github.com/heilcheng/awesome-agent-skills | submitted | 2026-06-10 | PR [#276](https://github.com/heilcheng/awesome-agent-skills/pull/276): "Skills by Openapi" block under Business, Productivity & Marketing, with team-affiliation disclosure |
 | ComposioHQ/awesome-claude-skills | https://github.com/ComposioHQ/awesome-claude-skills | n/a | 2026-06-10 | Hosts skills *inside* its own repo (folders, not links) — not a fit for linking an external collection |
 | travisvn/awesome-claude-skills | https://github.com/travisvn/awesome-claude-skills | todo | | **At-risk**: strict "no SaaS wrappers / no promotion" policy for skills requiring the submitter's paid platform. If submitted, be transparent and target the "Collections & Libraries" section |
-| hesreallyhim/awesome-claude-code | https://github.com/hesreallyhim/awesome-claude-code | todo | | General Claude Code list — skills section |
+| hesreallyhim/awesome-claude-code | https://github.com/hesreallyhim/awesome-claude-code | todo | 2026-06-10 | **Human-only**: submissions exclusively via the [web issue form](https://github.com/hesreallyhim/awesome-claude-code/issues/new?template=recommend-resource.yml) — CLI/PR submissions are banned. They want evidence-based claims: link the A/B harness (`test/run_comparison.sh`) as reproducible proof, and per their guidelines recommend a *focused subset* (e.g. openapi-company), not the whole marketplace |
 | ComposioHQ/awesome-claude-plugins | https://github.com/ComposioHQ/awesome-claude-plugins | todo | | If/when packaged as plugin |
 | Chat2AnyLLM/awesome-claude-plugins | https://github.com/Chat2AnyLLM/awesome-claude-plugins | submitted | 2026-06-10 | PR [Chat2AnyLLM/awesome-repo-configs#51](https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/51): added to both `skill_repos.json` and `plugin_repos.json` (their README auto-generates from these configs); their 3 validation tests pass |
 
@@ -74,7 +89,7 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 |---|---|---|---|---|
 | Smithery | https://smithery.ai/ | todo | | |
 | mcp.so | https://mcp.so/ | todo | | |
-| Glama | https://glama.ai/mcp/servers | todo | | |
+| Glama | https://glama.ai/mcp/servers | todo | 2026-06-10 | Checked: no official Openapi server listed (only third-party "openapi-spec" tools, different thing). Listing/claiming requires the mcp-server repo owner via their platform |
 | PulseMCP | https://www.pulsemcp.com/ | todo | | |
 | MCP Market | https://mcpmarket.com/ | todo | | Same site as the skills section above |
 
@@ -129,3 +144,5 @@ Ready-to-publish drafts live in [`.github/distribution/announcements/`](.github/
 | 2026-06-10 | README badges: license badge switched to static shields.io image (no GitHub-API computation), skills.sh badge added |
 | 2026-06-10 | Round 4 (heterogeneous): release badge made static too (bump manually on new releases); SkillX investigated (npm CLI is a script runner, no registry submit — deprioritized); aitmpl contribution path identified (in-repo component PR with attribution, heavier — future option); LLMBase 403 / MCP Market 429 to automation — manual forms; 4 announcement drafts written in `.github/distribution/announcements/` (dev.to, Reddit, Show HN, LinkedIn IT+EN) ready for human posting |
 | 2026-06-10 | Round 5: PR [#51](https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/51) to Chat2AnyLLM's config repo (feeds their auto-generated plugin/skill index) — added to both skill_repos.json and plugin_repos.json with their schema, validation tests green. Re-checks: PR #276 still open, skills.sh page still 404 |
+| 2026-06-10 | File renamed DISTRIBUTION.md → DISTRIBUTING.md; added "Pending manual actions" checklist at the top |
+| 2026-06-10 | Round 6: awesome-claude-code investigated — submissions are **human-only via web issue form** (CLI banned by policy); added to the manual checklist with evidence-based tips. Glama checked: no official Openapi MCP server listed (only unrelated third-party openapi-spec tools) — claiming requires the mcp-server owner |

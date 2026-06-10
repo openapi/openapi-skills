@@ -1,0 +1,23 @@
+{
+  "name": "openapi-skills",
+  "displayName": "Openapi Skills",
+  "description": "Agent skills for the Openapi API marketplace: company data (IT/EU/worldwide), official Italian business documents, KYC/risk reports, data verification, geocoding and cadastre, SMS/PEC/postal messaging, eIDAS e-signatures, electronic invoicing via SDI, automotive data and utilities.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Openapi",
+    "url": "https://openapi.com"
+  },
+  "homepage": "https://github.com/openapi/openapi-skills",
+  "repository": "https://github.com/openapi/openapi-skills",
+  "license": "MIT",
+  "keywords": [
+    "openapi",
+    "api",
+    "company-data",
+    "kyc",
+    "e-invoicing",
+    "e-signature",
+    "italy",
+    "skills"
+  ]
+}

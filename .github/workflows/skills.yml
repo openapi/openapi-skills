@@ -1,4 +1,4 @@
-name: Skills CI
+name: build
 
 on:
   push:

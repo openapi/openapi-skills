@@ -1,0 +1,20 @@
+{
+  "name": "openapi",
+  "owner": {
+    "name": "Openapi",
+    "url": "https://openapi.com"
+  },
+  "metadata": {
+    "description": "Official Openapi plugin marketplace",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "openapi-skills",
+      "source": "./",
+      "description": "Agent skills for the Openapi API marketplace: company data, official documents, KYC/risk, verification, geo data, messaging, e-signatures, invoicing, automotive and utilities.",
+      "category": "api-integration",
+      "keywords": ["openapi", "api", "company-data", "kyc", "e-invoicing", "italy"]
+    }
+  ]
+}

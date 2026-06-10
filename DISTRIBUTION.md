@@ -91,15 +91,15 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 
 ## 8. Community announcements (one-shot)
 
-Ready-to-publish drafts live in [`distribution/announcements/`](distribution/announcements/) — they must be posted by a human from a personal/company account (stealth or automated posting would backfire on these platforms).
+Ready-to-publish drafts live in [`.github/distribution/announcements/`](.github/distribution/announcements/) — they must be posted by a human from a personal/company account (stealth or automated posting would backfire on these platforms).
 
 | Channel | URL | Status | Date | Notes |
 |---|---|---|---|---|
-| Reddit r/ClaudeAI | https://www.reddit.com/r/ClaudeAI/ | todo | 2026-06-10 | Draft ready: [reddit-claudeai.md](distribution/announcements/reddit-claudeai.md) — affiliation disclosed, A/B data as the hook |
+| Reddit r/ClaudeAI | https://www.reddit.com/r/ClaudeAI/ | todo | 2026-06-10 | Draft ready: [reddit-claudeai.md](.github/distribution/announcements/reddit-claudeai.md) — affiliation disclosed, A/B data as the hook |
 | Reddit r/ClaudeCode | https://www.reddit.com/r/ClaudeCode/ | todo | 2026-06-10 | Same draft, adapt the title; don't post to both the same day |
-| Hacker News (Show HN) | https://news.ycombinator.com/ | todo | 2026-06-10 | Draft ready: [show-hn.md](distribution/announcements/show-hn.md) — submit + first comment; pair with the dev.to/blog post live |
-| dev.to / Hashnode | https://dev.to/ | todo | 2026-06-10 | Draft ready: [dev-to-article.md](distribution/announcements/dev-to-article.md) — also reusable for the Openapi blog |
-| LinkedIn (company + personal) | https://www.linkedin.com/company/openapi-com | todo | 2026-06-10 | Draft ready (IT + EN): [linkedin.md](distribution/announcements/linkedin.md) |
+| Hacker News (Show HN) | https://news.ycombinator.com/ | todo | 2026-06-10 | Draft ready: [show-hn.md](.github/distribution/announcements/show-hn.md) — submit + first comment; pair with the dev.to/blog post live |
+| dev.to / Hashnode | https://dev.to/ | todo | 2026-06-10 | Draft ready: [dev-to-article.md](.github/distribution/announcements/dev-to-article.md) — also reusable for the Openapi blog |
+| LinkedIn (company + personal) | https://www.linkedin.com/company/openapi-com | todo | 2026-06-10 | Draft ready (IT + EN): [linkedin.md](.github/distribution/announcements/linkedin.md) |
 | Product Hunt | https://www.producthunt.com/ | todo | | Optional, needs preparation |
 
 ---
@@ -127,4 +127,4 @@ Ready-to-publish drafts live in [`distribution/announcements/`](distribution/ann
 | 2026-06-10 | Round 3 checks: PR #276 still open (only Vercel deploy bot comment); skills.sh still not indexing the repo (page 404) — added the official skills.sh badge to the README, which may trigger their crawler |
 | 2026-06-10 | Clarified Anthropic marketplace path: official is invite-only/curated (no application); submissions go to the **community marketplace** via in-app form (claude.ai/settings/plugins/submit, login required — human step). `claude plugin validate` passes, ready to submit |
 | 2026-06-10 | README badges: license badge switched to static shields.io image (no GitHub-API computation), skills.sh badge added |
-| 2026-06-10 | Round 4 (heterogeneous): release badge made static too (bump manually on new releases); SkillX investigated (npm CLI is a script runner, no registry submit — deprioritized); aitmpl contribution path identified (in-repo component PR with attribution, heavier — future option); LLMBase 403 / MCP Market 429 to automation — manual forms; 4 announcement drafts written in `distribution/announcements/` (dev.to, Reddit, Show HN, LinkedIn IT+EN) ready for human posting |
+| 2026-06-10 | Round 4 (heterogeneous): release badge made static too (bump manually on new releases); SkillX investigated (npm CLI is a script runner, no registry submit — deprioritized); aitmpl contribution path identified (in-repo component PR with attribution, heavier — future option); LLMBase 403 / MCP Market 429 to automation — manual forms; 4 announcement drafts written in `.github/distribution/announcements/` (dev.to, Reddit, Show HN, LinkedIn IT+EN) ready for human posting |

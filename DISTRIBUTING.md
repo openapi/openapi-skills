@@ -40,6 +40,7 @@ The highest-value targets: users install directly from here.
 | Claude Skills Hub | https://claudeskills.info/ | Submission/indexing of SKILL.md repos | todo | | 658+ skills indexed; site blocks automated fetch (403) — check submission path manually |
 | AwesomeSkills.dev | https://www.awesomeskills.dev/en | **Manual web form** at https://www.awesomeskills.dev/en/submit — paste the GitHub URL, auto-detects everything, live instantly (no moderation) | todo | | Client-side React form, no public API — needs a human, ~30 s |
 | LLMBase skills directory | https://llmbase.ai/skills/ | Submission form | todo | 2026-06-10 | Blocks automated access (403) — manual check needed |
+| SkillsMP | https://skillsmp.com/ | **Passive**: auto-indexes public GitHub repos with SKILL.md (1.6M+ skills) — no submission form by design | submitted | 2026-06-10 | Nothing to do; repo is public with 11 SKILL.md files. Not indexed yet — re-check in 1–2 weeks |
 
 ## 2. Official Anthropic channels
 
@@ -47,7 +48,7 @@ The highest-value targets: users install directly from here.
 |---|---|---|---|---|---|
 | Claude Code **community** marketplace | https://github.com/anthropics/claude-plugins-community | **Manual in-app form (login required)**: https://claude.ai/settings/plugins/submit or https://platform.claude.com/plugins/submit — review + automated safety screening; approved plugins pinned by commit SHA, catalog syncs nightly | todo | 2026-06-10 | **Packaging done & validated** (`claude plugin validate` ✓); repo already works with `/plugin marketplace add openapi/openapi-skills`. The form needs a human with a Claude account |
 | Claude Code official plugin marketplace | https://github.com/anthropics/claude-plugins-official | Curated by Anthropic at its discretion — **no application process** (the submission form feeds the community marketplace only) | n/a | 2026-06-10 | Best path: get traction in the community marketplace first |
-| anthropics/skills (official examples repo) | https://github.com/anthropics/skills | PR if/where third-party skills are accepted | todo | | Check current contribution policy first |
+| anthropics/skills (official examples repo) | https://github.com/anthropics/skills | No CONTRIBUTING.md and no third-party contribution path in the README — it's Anthropic's own examples repo | n/a | 2026-06-10 | The community marketplace (row above) is the intended third-party channel |
 
 ## 3. Awesome lists (GitHub PRs)
 
@@ -88,9 +89,9 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 | Channel | URL | Status | Date | Notes |
 |---|---|---|---|---|
 | Smithery | https://smithery.ai/ | todo | | |
-| mcp.so | https://mcp.so/ | todo | | |
+| mcp.so | https://mcp.so/ | todo | 2026-06-10 | Blocks automated access (403) — manual check/submission needed |
 | Glama | https://glama.ai/mcp/servers | todo | 2026-06-10 | Checked: no official Openapi server listed (only third-party "openapi-spec" tools, different thing). Listing/claiming requires the mcp-server repo owner via their platform |
-| PulseMCP | https://www.pulsemcp.com/ | todo | | |
+| PulseMCP | https://www.pulsemcp.com/ | todo | 2026-06-10 | Checked: no official Openapi server listed. They have a submit form on the site and also discover servers from public sources — action for the mcp-server owner |
 | MCP Market | https://mcpmarket.com/ | todo | | Same site as the skills section above |
 
 ## 7. Openapi's own channels
@@ -146,3 +147,4 @@ Ready-to-publish drafts live in [`.github/distribution/announcements/`](.github/
 | 2026-06-10 | Round 5: PR [#51](https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/51) to Chat2AnyLLM's config repo (feeds their auto-generated plugin/skill index) — added to both skill_repos.json and plugin_repos.json with their schema, validation tests green. Re-checks: PR #276 still open, skills.sh page still 404 |
 | 2026-06-10 | File renamed DISTRIBUTION.md → DISTRIBUTING.md; added "Pending manual actions" checklist at the top |
 | 2026-06-10 | Round 6: awesome-claude-code investigated — submissions are **human-only via web issue form** (CLI banned by policy); added to the manual checklist with evidence-based tips. Glama checked: no official Openapi MCP server listed (only unrelated third-party openapi-spec tools) — claiming requires the mcp-server owner |
+| 2026-06-10 | Round 7: SkillsMP discovered and added (passive GitHub auto-indexing, 1.6M+ skills — nothing to submit, awaiting their crawler); anthropics/skills marked n/a (no third-party contribution path — community marketplace is the channel); PulseMCP checked (no Openapi server, submit form available for mcp-server owner); mcp.so blocks automation (403); claudemarketplaces.com still hasn't indexed us |

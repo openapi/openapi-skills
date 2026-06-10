@@ -7,7 +7,7 @@
   <h4>Agent skills to interact with <a href="https://openapi.com/">Openapi®</a> APIs from Claude Code and any SKILL.md-compatible agent</h4>
 
 [![Skills CI](https://github.com/openapi/openapi-skills/actions/workflows/skills.yml/badge.svg)](https://github.com/openapi/openapi-skills/actions/workflows/skills.yml)
-[![Release](https://img.shields.io/github/v/release/openapi/openapi-skills)](https://github.com/openapi/openapi-skills/releases)
+[![Release](https://img.shields.io/badge/release-v0.1.0-blue)](https://github.com/openapi/openapi-skills/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-11-blueviolet)](skills/)
 [![skills.sh](https://skills.sh/b/openapi/openapi-skills)](https://skills.sh/openapi/openapi-skills)

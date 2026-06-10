@@ -19,12 +19,12 @@ The highest-value targets: users install directly from here.
 | Channel | URL | How to get listed | Status | Date | Notes |
 |---|---|---|---|---|---|
 | Skills.sh (Vercel) | https://www.skills.sh/ | Indexed from public GitHub repos with `skills/*/SKILL.md`; installs counted via `npx skills add openapi/openapi-skills`. Verify the repo appears in search | submitted | 2026-06-10 | Install command verified working (11 skills detected, installs to 19+ agents); first install registered. Re-check search indexing in a few days |
-| SkillX | https://github.com/nextlevelbuilder/skillx | Marketplace with semantic search/ratings; submit per their CLI/registry flow | todo | | |
+| SkillX | https://github.com/nextlevelbuilder/skillx | Unclear: the `skillx` npm CLI is a local skill-script runner, not a registry publisher; no submit path found in the repo | todo | 2026-06-10 | Low priority — revisit if the marketplace materializes |
 | Skills Directory | https://www.skillsdirectory.com/ | **Manual web form** at https://www.skillsdirectory.com/submit (reviewed before publishing) | todo | | Security-vetted listing is good trust signal for a B2B brand. Form is client-side — needs a human, ~2 min |
-| MCP Market — Skills section | https://mcpmarket.com/tools/skills | Submit skill/tool via their form | todo | | Same site can also list the Openapi MCP server |
+| MCP Market — Skills section | https://mcpmarket.com/tools/skills | Submit skill/tool via their form | todo | 2026-06-10 | Rate-limits automated access (429) — manual submission needed |
 | Claude Skills Hub | https://claudeskills.info/ | Submission/indexing of SKILL.md repos | todo | | 658+ skills indexed; site blocks automated fetch (403) — check submission path manually |
 | AwesomeSkills.dev | https://www.awesomeskills.dev/en | **Manual web form** at https://www.awesomeskills.dev/en/submit — paste the GitHub URL, auto-detects everything, live instantly (no moderation) | todo | | Client-side React form, no public API — needs a human, ~30 s |
-| LLMBase skills directory | https://llmbase.ai/skills/ | Submission form | todo | | |
+| LLMBase skills directory | https://llmbase.ai/skills/ | Submission form | todo | 2026-06-10 | Blocks automated access (403) — manual check needed |
 
 ## 2. Official Anthropic channels
 
@@ -91,12 +91,15 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 
 ## 8. Community announcements (one-shot)
 
+Ready-to-publish drafts live in [`distribution/announcements/`](distribution/announcements/) — they must be posted by a human from a personal/company account (stealth or automated posting would backfire on these platforms).
+
 | Channel | URL | Status | Date | Notes |
 |---|---|---|---|---|
-| Reddit r/ClaudeAI | https://www.reddit.com/r/ClaudeAI/ | todo | | |
-| Reddit r/ClaudeCode | https://www.reddit.com/r/ClaudeCode/ | todo | | |
-| Hacker News (Show HN) | https://news.ycombinator.com/ | todo | | Best paired with the blog post |
-| dev.to / Hashnode | https://dev.to/ | todo | | Tutorial-style article |
+| Reddit r/ClaudeAI | https://www.reddit.com/r/ClaudeAI/ | todo | 2026-06-10 | Draft ready: [reddit-claudeai.md](distribution/announcements/reddit-claudeai.md) — affiliation disclosed, A/B data as the hook |
+| Reddit r/ClaudeCode | https://www.reddit.com/r/ClaudeCode/ | todo | 2026-06-10 | Same draft, adapt the title; don't post to both the same day |
+| Hacker News (Show HN) | https://news.ycombinator.com/ | todo | 2026-06-10 | Draft ready: [show-hn.md](distribution/announcements/show-hn.md) — submit + first comment; pair with the dev.to/blog post live |
+| dev.to / Hashnode | https://dev.to/ | todo | 2026-06-10 | Draft ready: [dev-to-article.md](distribution/announcements/dev-to-article.md) — also reusable for the Openapi blog |
+| LinkedIn (company + personal) | https://www.linkedin.com/company/openapi-com | todo | 2026-06-10 | Draft ready (IT + EN): [linkedin.md](distribution/announcements/linkedin.md) |
 | Product Hunt | https://www.producthunt.com/ | todo | | Optional, needs preparation |
 
 ---
@@ -124,3 +127,4 @@ Not this repo, but the same audience: each MCP listing should cross-link the ski
 | 2026-06-10 | Round 3 checks: PR #276 still open (only Vercel deploy bot comment); skills.sh still not indexing the repo (page 404) — added the official skills.sh badge to the README, which may trigger their crawler |
 | 2026-06-10 | Clarified Anthropic marketplace path: official is invite-only/curated (no application); submissions go to the **community marketplace** via in-app form (claude.ai/settings/plugins/submit, login required — human step). `claude plugin validate` passes, ready to submit |
 | 2026-06-10 | README badges: license badge switched to static shields.io image (no GitHub-API computation), skills.sh badge added |
+| 2026-06-10 | Round 4 (heterogeneous): release badge made static too (bump manually on new releases); SkillX investigated (npm CLI is a script runner, no registry submit — deprioritized); aitmpl contribution path identified (in-repo component PR with attribution, heavier — future option); LLMBase 403 / MCP Market 429 to automation — manual forms; 4 announcement drafts written in `distribution/announcements/` (dev.to, Reddit, Show HN, LinkedIn IT+EN) ready for human posting |

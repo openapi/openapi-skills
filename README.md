@@ -9,6 +9,16 @@ Agent skills for using and integrating the services of the [Openapi](https://ope
 | [`knowledge/`](knowledge/) | Curated knowledge base: company profile, services catalog, platform guide (auth, billing, sandbox), FAQ, references, per-service endpoint docs and vendored OpenAPI specs |
 | [`skills/`](skills/) | The agent skills, one folder per domain, each with a `SKILL.md` |
 
+## Knowledge / skills separation
+
+The two folders have strictly separated roles:
+
+- **`knowledge/` is build-time material.** It is the mass of curated information used to *create and align* the skills (and to refresh them when Openapi changes). It is consulted by maintainers of this repo, not by agents executing a skill.
+- **`skills/` are self-contained deliverables.** Each `SKILL.md` is *populated from* the knowledge but never *links to* it: an agent must be able to use a skill without this repository's `knowledge/` folder being available.
+- **External references are allowed in skills, but never routed through `knowledge/`.** Skills point directly to official sources — e.g. the canonical specs at `https://console.openapi.com/oas/en/<service>.openapi.json`, the docs portal, the status page — not to local copies of them.
+
+Maintenance flow: update `knowledge/` from the official sources first, then propagate the relevant content into the affected `SKILL.md` files.
+
 ## Skills
 
 | Skill | Covers |

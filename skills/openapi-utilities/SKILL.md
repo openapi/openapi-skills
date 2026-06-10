@@ -7,19 +7,27 @@ description: Openapi utility services - real-time currency exchange rates, HTML-
 
 Bearer token required (see the `openapi-auth` skill).
 
-| Service | Base URL | Use for |
-|---|---|---|
-| Exchange Rate | `https://exchange.altravia.com` | Real-time currency exchange rates (single endpoint) |
-| PDF | `https://pdf.openapi.it` | Generate a PDF from a URL or HTML string; renders JavaScript |
-| .it Domains | `https://domains.altravia.com` | Register and manage `.it` domains (purchase is a paid, durable action — confirm first) |
-| AI (RAG) | `https://ai.openapi.com` | Create RAGs, upload/index documents and images, query them |
+## Exchange Rate — `https://exchange.altravia.com`
 
-## AI (RAG) workflow
+Single endpoint returning real-time currency exchange rates.
 
-1. Create a RAG instance.
-2. Upload text documents/images and start indexing.
-3. Query the RAG; delete it when no longer needed.
+## PDF — `https://pdf.openapi.it`
 
-## References
+One endpoint: generate a PDF from a URL or an HTML string; JavaScript is rendered.
 
-Specs: [exchange](../../knowledge/oas/exchange.openapi.json) · [pdf](../../knowledge/oas/pdf.openapi.json) · [domains](../../knowledge/oas/domains.openapi.json) · [ai](../../knowledge/oas/ai.openapi.json) — endpoint lists in [knowledge/services/](../../knowledge/services/).
+## .it Domains — `https://domains.altravia.com`
+
+Register and manage `.it` domains (availability, purchase, DNS/contacts management). Domain purchase is a paid, durable action — confirm with the user first.
+
+## AI (RAG) — `https://ai.openapi.com`
+
+Managed Retrieval-Augmented Generation:
+
+- `POST /rag` — create a RAG; `GET /rag`, `GET /rag/{id}`, `DELETE /rag/{id}`
+- `POST /rag/{id}/documents` — upload text documents or images (metadata supported for filtered search); `GET`/`DELETE` to list/remove
+- `PATCH /rag/{id}` — start indexing
+- Query: `POST /rag-search` (plain retrieval), `POST /rag-search-with-answer` (LLM answer), `POST /rag-conversation` (conversational)
+
+Typical flow: create RAG → upload documents → index → query → delete when no longer needed.
+
+Full specs: https://console.openapi.com/oas/en/exchange.openapi.json · …/pdf.openapi.json · …/domains.openapi.json · …/ai.openapi.json

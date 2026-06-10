@@ -1,26 +1,43 @@
 ---
 name: openapi-geo
-description: Italian geographic and property data through Openapi - geocoding/reverse geocoding, zip codes (CAP), municipalities/provinces/regions with ISTAT codes, Italian cadastre (catasto) property and owner lookups, real estate valuations and comparables.
+description: Italian geographic and property data through Openapi - geocoding/reverse geocoding, zip codes (CAP), municipalities/provinces/regions with ISTAT codes, Italian cadastre (catasto) property and owner lookups, visure catastali/ipotecarie, real estate valuations.
 ---
 
 # Openapi geo & real estate data
 
 Four services; all use a Bearer token (see the `openapi-auth` skill).
 
-| Service | Base URL | Use for |
-|---|---|---|
-| Geocoding | `https://geocoding.openapi.it` | Address → coordinates (`/geocode`) and coordinates → address (`/reverse`) |
-| Zip Codes (CAP) | `https://cap.openapi.it` | Italian municipalities, zip codes, provinces, regions, metropolitan cities, ISTAT codes, suppressed municipalities |
-| Catasto | `https://catasto.openapi.it` | Italian cadastre: cadastral data of buildings/land and their registered holders (by property or by subject) |
-| Real Estate | `https://realestate.openapi.com` | Property valuations and comparables by type, location, contract type |
+## Geocoding — `https://geocoding.openapi.it`
 
-## Typical lookups
+- `POST /geocode` — address → coordinates and place details
+- `POST /reverse` — coordinates (or place ID) → address
 
-- Zip → municipalities: `GET /comuni?cap=...` style search; municipality ↔ ISTAT code lookups; full lists of regions/provinces.
-- Cadastre queries are official paid lookups, several async — confirm before running many of them; subject searches return personal data (GDPR care).
-- Real estate valuation: query `/valuation` with property type, location and contract type.
+## Zip Codes (CAP) — `https://cap.openapi.it`
 
-## Notes
+- `GET /cerca_comuni` — search municipalities by name/region/province
+- `GET /comuni_base/{istat_code}` / `GET /comuni_advance/{istat_code}` — municipality details
+- `GET /cap/{cap}` — municipalities matching a zip code
+- `GET /regioni`, `GET /province`, `GET /province/{code}`, `GET /citta_metropolitane`, `GET /comuni_soppressi`
 
-- CAP sandbox has a limited dataset; some parameters return fixed data.
-- Specs: [geocoding](../../knowledge/oas/geocoding.openapi.json) · [cap](../../knowledge/oas/cap.openapi.json) · [catasto](../../knowledge/oas/catasto.openapi.json) · [realestate](../../knowledge/oas/realestate.openapi.json) — endpoint lists in [knowledge/services/](../../knowledge/services/).
+Sandbox has a limited dataset; some parameters return fixed data.
+
+## Catasto (Italian cadastre) — `https://catasto.openapi.it`
+
+Official paid lookups; document generation is async (`POST` → `GET /{id}` → `GET /{id}/documento`). Subject searches return personal data — GDPR care.
+
+- Cadastral data requests: `POST /richiesta/{endpoint}/`, status via `GET /richiesta/{id}` (property data, holders, properties by subject, counts)
+- Address search: `POST /indirizzo`, `GET /indirizzo/{id}` — properties at an address
+- Visura catastale (PDF): `POST /visura_catastale` → `GET /visura_catastale/{id}/documento`
+- Visure ipotecarie (land registry): `POST /ipotecarie-ispezione_nazionale`, `POST /ipotecarie-elenco-note`, `POST /ipotecarie-dettaglio-nota` → `GET /ipotecarie/{id}[/documento]`
+- Map extract (PDF): `POST /estratto_mappa` → `GET /estratto_mappa/{id}/documento`
+- Reference data: `GET /territorio` (provinces/municipalities), `GET /territorio/conservatorie` (Land Registry Offices)
+
+## Real Estate — `https://realestate.openapi.com`
+
+- `POST /IT-rmv` — property transaction details (comparables)
+- `POST /IT-sqm_value_start` — basic €/sqm valuation
+- `POST /IT-sqm_value_advanced` — detailed valuation with sales and demographic data
+
+Sandbox returns consistent predefined data for testing.
+
+Full specs: https://console.openapi.com/oas/en/geocoding.openapi.json · …/cap.openapi.json · …/catasto.openapi.json · …/realestate.openapi.json

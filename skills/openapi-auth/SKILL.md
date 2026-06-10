@@ -28,20 +28,31 @@ curl -s -u "$OPENAPI_EMAIL:$OPENAPI_API_KEY" https://oauth.openapi.com/tokens \
   }'
 ```
 
-- Scope format: `METHOD:host/path-prefix` (e.g. `POST:sms.openapi.com/messages`). Request only the scopes the task needs, with a short `ttl`.
+- Scope format: `METHOD:host/path-prefix` (e.g. `POST:sms.openapi.com/IT-messages`). Request only the scopes the task needs, with a short `ttl` (max 1 year).
 - Discover valid scopes: `GET https://oauth.openapi.com/scopes` (Basic auth).
-- A refresh token can renew an expired token: `PATCH /tokens/{id}` with the refresh token as Bearer.
+- Optional `limits` object restricts token usage further.
+- A refresh token can renew a token: `PATCH /tokens/{id}` with the refresh token as Bearer.
+- Tokens can also be created from the console UI (Authentication → "+New Token") at https://console.openapi.com.
 
-## Useful management endpoints (Basic auth)
+## Management endpoints (Basic auth)
 
-- `GET /tokens`, `GET|PATCH|DELETE /tokens/{token}` — token lifecycle
-- `GET /wallet`, `GET /wallet/transactions` — credit balance (check before expensive paid calls)
-- `GET /subscriptions` — active plans and remaining requests
-- `GET /stats`, `GET /stats/apis/{domain}` — usage analytics
-- `GET /errors`, `GET /callbacks` — error log and callback monitoring
+| Endpoint | Purpose |
+|---|---|
+| `GET /tokens`, `GET\|PATCH\|DELETE /tokens/{token}` | Token lifecycle |
+| `GET /scopes`, `GET /scopes/{id}` | Available scopes |
+| `GET /wallet`, `GET /wallet/transactions` | Credit balance — check before expensive paid calls |
+| `GET /subscriptions`, `GET /subscriptions/{id}` | Active plans and remaining requests |
+| `GET /stats`, `GET /stats/apis`, `GET /stats/apis/{domain}`, `GET /stats/ips` | Usage analytics |
+| `GET /errors`, `GET /callbacks` | Error log and callback monitoring |
+
+## Billing model (affects every service)
+
+- Requests are paid from the **wallet** (per request) or from a **subscription** (monthly: 30 days no rollover; annual: 365 days, any pace). Both can coexist; the wallet is the fallback when subscription requests run out.
+- Some APIs have free daily/monthly tiers; rate limits, when present, are stated in each API's description.
+- **Sandbox**: free test requests, but "sandbox credit" must be enabled in the console first; responses are illustrative.
 
 ## Notes
 
 - OAuth v1 (`oauth.openapi.it`) is deprecated — always use `oauth.openapi.com`.
-- Sandbox testing requires enabling "sandbox credit" in the console first; see [platform guide](../../knowledge/platform-guide.md).
-- Full spec: [knowledge/oas/oauthv2.openapi.json](../../knowledge/oas/oauthv2.openapi.json) · endpoint list: [knowledge/services/oauthv2.md](../../knowledge/services/oauthv2.md)
+- Service health: https://openapi-com.statuspage.io
+- Full spec: https://console.openapi.com/oas/en/oauthv2.openapi.json
